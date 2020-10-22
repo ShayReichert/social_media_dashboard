@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white; }
+
+.split-background {
+  position: relative;
+  background: #1e202a;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  padding: 1rem 8rem; }
+  .split-background::before {
+    content: "";
+    position: absolute;
+    background: #1f212e;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 30%;
+    z-index: -1; }
+
+.header,
+.first-social-row,
+.second-social-row,
+.attribution {
+  margin: 1rem auto;
+  max-width: 1600px; }
+
+.first-social-row {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 20px; }
+  @media screen and (min-width: 768px) {
+    .first-social-row {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media screen and (min-width: 1200px) {
+    .first-social-row {
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px; } }
+  .first-social-row .card {
+    align-self: center;
+    justify-self: center;
+    width: 220px;
+    height: 200px;
+    background: #252a41; }
+
+.grid-second-social-row {
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 20px; }
+  .grid-second-social-row .small-card {
+    align-self: center;
+    justify-self: center;
+    width: 220px;
+    height: 115px;
+    background: #252a41; }
+
+/*# sourceMappingURL=style.css.map */
