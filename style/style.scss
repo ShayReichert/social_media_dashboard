@@ -1,138 +1,439 @@
-// # Front-end Style Guide
+/////////////
+// VARIABLES
+/////////////
 
-// ## Layout
-
-// The designs were created to the following widths:
-
-// - Mobile: 375px
-// - Desktop: 1440px
-
-// ## Colors
-
-// ### Primary
-
-// - Lime Green: hsl(163, 72%, 41%)
-// - Bright Red: hsl(356, 69%, 56%)
-
-// - Facebook: hsl(208, 92%, 53%)
-// - Twitter: hsl(203, 89%, 53%)
-// - Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%)
-// - YouTube: hsl(348, 97%, 39%)
-
-// #### Dark Theme
-
-// - Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%)
-
-// #### Light Theme
-
-// - Toggle: hsl(230, 22%, 74%)
-
-// ### Neutral
-
-// #### Dark Theme
-
-// - Very Dark Blue (BG): hsl(230, 17%, 14%)
-// - Very Dark Blue (Top BG Pattern): hsl(232, 19%, 15%)
-// - Dark Desaturated Blue (Card BG): hsl(228, 28%, 20%)
-// - Desaturated Blue (Text): hsl(228, 34%, 66%)
-// - White (Text): hsl(0, 0%, 100%)
-
-// #### Light Theme
-
-// - White (BG): hsl(0, 0%, 100%)
-// - Very Pale Blue (Top BG Pattern): hsl(225, 100%, 98%)
-// - Light Grayish Blue (Card BG): hsl(227, 47%, 96%)
-// - Dark Grayish Blue (Text): hsl(228, 12%, 44%)
-// - Very Dark Blue (Text): hsl(230, 17%, 14%)
-
-// ## Typography
-
-// ### Body Copy
-
-// - Font size (Overview Card Headings): 14px
-
-// ### Font
-
-// - Family: [Inter](https://fonts.google.com/specimen/Inter)
-// - Weights: 400, 700
-
-// sass --watch ./style/style.scss:./style/style.css
-
+// DARKMODE
+$colorGradientDark: linear-gradient(
+  0deg,
+  rgba(30, 32, 42, 1) 0%,
+  rgba(30, 32, 42, 1) 68%,
+  rgba(31, 33, 46, 1) 69%,
+  rgba(31, 33, 46, 1) 100%
+);
 $backgroundColor: hsl(230, 17%, 14%);
 $topBackgroundColor: hsl(232, 19%, 15%);
 $cardsColor: hsl(228, 28%, 20%);
+$lightCardsColor: hsl(228, 28%, 30%);
+$desaturatedBlue: hsl(228, 34%, 66%);
 $fontColor: hsl(0, 0%, 100%);
+$darkModeBg: linear-gradient(
+  270deg,
+  rgba(62, 218, 130, 1) 0%,
+  rgba(55, 143, 230, 1) 100%
+);
 
+// LIGHTMODE
+$colorGradientLight: linear-gradient(
+  0deg,
+  rgb(255, 255, 255) 0%,
+  rgb(255, 255, 255) 68%,
+  rgb(245, 247, 255) 69%,
+  rgb(245, 247, 255) 100%
+);
+$lightBgColor: hsl(0, 0%, 100%);
+$topLightBgColor: rgb(245, 247, 255);
+$lightCardBG: hsl(227, 47%, 96%);
+$hoverLightCardBG: hsl(230, 50%, 91%);
+$fontColorBlue: hsl(228, 12%, 44%);
+$fontColorDarkBlue: hsl(230, 17%, 14%);
+
+// SOCIAL MEDIA
+$limeGreen: hsl(163, 72%, 41%);
+$brightRed: hsl(356, 69%, 56%);
+$facebook: hsl(208, 92%, 53%);
+$twitter: hsl(203, 89%, 53%);
+$instagram: linear-gradient(
+  270deg,
+  hsl(37, 97%, 70%) 0%,
+  hsl(329, 70%, 58%) 100%
+);
+$youTube: hsl(348, 97%, 39%);
+
+/////////////
+// GENERAL
+/////////////
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+// DARKMODE
+:root {
+  --color-gradient-bg: #{$colorGradientLight};
+  --color-page-background: #{$lightBgColor};
+  --color-top-page-background: #{$topLightBgColor};
+  --color-cards: #{$lightCardBG};
+  --hover-color-cards: #{$hoverLightCardBG};
+  --color-text-one: #{$fontColorDarkBlue};
+  --color-text-two: #{$fontColorBlue};
+  --color-text-three: #{$fontColorBlue};
+  --bg-dark-mode: #{$fontColorBlue};
+}
+// LIGHTMODE
+.dark-mode {
+  --color-gradient-bg: #{$colorGradientDark};
+  --color-page-background: #{$backgroundColor};
+  --color-top-page-background: #{$topBackgroundColor};
+  --color-cards: #{$cardsColor};
+  --hover-color-cards: #{$lightCardsColor};
+  --color-text-one: #{$fontColor};
+  --color-text-two: #{$desaturatedBlue};
+  --color-text-three: #{$fontColor};
+  --bg-dark-mode: #{$darkModeBg};
+}
 
 * {
   font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: $fontColor;
+  color: var(--color-text-one);
+}
+body {
+  background: var(--color-page-background);
 }
 .split-background {
-  position: relative;
-  background: $backgroundColor;
+  background: var(--color-page-background);
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   z-index: -1;
-  padding: 1rem 8rem;
-  &::before {
-    content: "";
-    position: absolute;
-    background: $topBackgroundColor;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 30%;
-    z-index: -1;
-  }
+  padding: 1rem;
 }
-
 .header,
 .first-social-row,
 .second-social-row,
 .attribution {
   margin: 1rem auto;
-  max-width: 1600px;
+  max-width: 942px;
 }
 
+/////////////
+// HEADER
+/////////////
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 270px;
+}
+.underline {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-text-two);
+  margin: 1rem auto;
+}
+.header-left {
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+    color: var(--color-text-one);
+  }
+  p {
+    font-size: 0.75rem;
+    color: var(--color-text-two);
+    font-weight: 700;
+  }
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 305px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-three);
+}
+
+/////////////
+// toggleSwitch DarkMode :
+/////////////
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+  margin-left: 1em;
+  transition: all 300ms;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-dark-mode);
+  -webkit-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    background: $darkModeBg;
+  }
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 27px;
+  bottom: 4px;
+  background-color: $topLightBgColor;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+input:checked + .slider:before {
+  background-color: $topBackgroundColor;
+  -webkit-transform: translateX(-24px);
+  -ms-transform: translateX(-24px);
+  transform: translateX(-24px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+// MEDIAQUERIES (General + Header)
+@media screen and (min-width: 768px) {
+  .split-background {
+    padding: 1rem 8rem;
+  }
+  .header {
+    width: 550px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .underline {
+    display: none;
+  }
+  .header-left {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  .header-right {
+    justify-content: normal;
+    width: auto;
+    .darkmode {
+      color: var(--color-text-two);
+      margin-left: 1em;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .split-background {
+    background: var(--color-page-background);
+    background: var(--color-gradient-bg);
+    height: 100vh;
+  }
+  .header {
+    width: 942px;
+    margin: 1rem auto 1.5rem auto;
+    justify-content: space-between;
+  }
+}
+
+/////////////
+// CARDS
+/////////////
+.cards {
+  background: var(--color-cards);
+  width: 270px;
+  align-self: center;
+  justify-self: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms;
+  &:hover {
+    background: var(--hover-color-cards);
+  }
+}
+
+/////////////
+// FIRST ROW
+/////////////
 .first-social-row {
   display: grid;
   margin: auto;
   grid-template-columns: 1fr;
   grid-auto-rows: minmax(100px, auto);
   grid-gap: 20px;
-
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+}
+.big-cards {
+  position: relative;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .pseudo {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--color-text-two);
+    font-weight: 700;
+    img {
+      margin-right: 10px;
+    }
   }
-  @media screen and (min-width: 1200px) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 200px;
+  .number_followers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-one);
   }
-  .card {
-    align-self: center;
-    justify-self: center;
-    width: 220px;
-    height: 200px;
-    background: $cardsColor;
+  .number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: -3px;
+  }
+  .followers {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--color-text-two);
+  }
+  .evolution {
+    margin-bottom: 20px;
+  }
+  .color-line {
+    height: 2.5%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 5px 5px 0 0;
+  }
+  .facebook-color {
+    background: $facebook;
+  }
+  .twitter-color {
+    background: $twitter;
+  }
+  .insta-color {
+    background: $instagram;
+  }
+  .youtube-color {
+    background: $youTube;
   }
 }
+.evolution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: $limeGreen;
+  img {
+    margin-right: 5px;
+  }
+}
+.evolution-red {
+  color: $brightRed;
+}
 
+/////////////
+// SECOND ROW
+/////////////
+.second-social-row h2 {
+  font-size: 1.3rem;
+  margin-top: 1.6rem;
+}
 .grid-second-social-row {
   display: grid;
   margin: auto;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(100px, auto);
   grid-gap: 20px;
-  .small-card {
-    align-self: center;
-    justify-self: center;
-    width: 220px;
-    height: 115px;
-    background: $cardsColor;
+  .small-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 110px;
   }
 }
+.first-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  justify-content: space-evenly;
+  .title {
+    font-size: 0.75rem;
+    color: var(--color-text-two);
+    font-weight: 700;
+  }
+  .number {
+    font-size: 1.7rem;
+    font-weight: 700;
+  }
+}
+.second-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 20px;
+  justify-content: space-evenly;
+}
+
+/////////////
+// FOOTER
+/////////////
+.attribution {
+  margin-top: 1.8rem;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0.4;
+  font-size: 0.5rem;
+  color: var(--color-text-two);
+  font-weight: 700;
+  width: 270px;
+  a {
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+// MEDIAQUERIES (Cards + Footer)
+@media screen and (min-width: 768px) {
+  .first-social-row {
+    grid-template-columns: repeat(2, 1fr);
+    width: 550px;
+  }
+  .grid-second-social-row {
+    grid-template-columns: repeat(2, 1fr);
+    width: 550px;
+  }
+  .attribution {
+    width: 550px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .cards {
+    width: 220px;
+  }
+  .first-social-row {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    width: auto;
+  }
+  .grid-second-social-row {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: auto;
+  }
+  .attribution {
+    width: auto;
+  }
+}
+// Nettoyer code.
+// Mettre en ligne et partager sur twitter

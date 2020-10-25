@@ -12,134 +12,231 @@
     />
     <title>Frontend Mentor | Social Media Dashboard</title>
   </head>
+
   <body>
-    <!-- Faire un ::before pour la double couleur  -->
     <div class="split-background">
       <header class="header">
-        <h1>Social Media Dashboard</h1>
-        <p>Total Followers: 23,004</p>
-        Dark Mode
+        <div class="header-left">
+          <h1>Social Media Dashboard</h1>
+          <p>Total Followers: 23,004</p>
+          <div class="underline"></div>
+        </div>
+        <div class="header-right">
+          <div class="darkmode">Dark Mode</div>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
       </header>
+
       <div class="first-social-row">
-        <div class="card">
-          <!-- Faire un ::before pour la ligne de couleur en haut des carrés  -->
-          <div class="pseudo">@nathanf</div>
-          <div class="number">1987</div>
-          <div class="followers">Followers</div>
-          <div class="evolution"><span>(arrow)</span> 12 Today</div>
+        <div class="cards big-cards">
+          <div class="color-line facebook-color"></div>
+          <div class="pseudo">
+            <img src="./images/icon-facebook.svg" alt="facebook" />
+            @nathanf
+          </div>
+          <div class="number_followers">
+            <span class="number">1987</span>
+            <span class="followers">Followers</span>
+          </div>
+          <div class="evolution">
+            <img src="./images/icon-up.svg" alt="arrow up" />
+            12 Today
+          </div>
         </div>
-        <div class="card">
-          <div class="pseudo">@nathanf</div>
-          <div class="number">1044</div>
-          <div class="followers">Followers</div>
-          <div class="evolution"><span>(arrow)</span> 99 Today</div>
+        <div class="cards big-cards">
+          <div class="color-line twitter-color"></div>
+          <div class="pseudo">
+            <img src="./images/icon-twitter.svg" alt="twitter" />
+            @nathanf
+          </div>
+          <div class="number_followers">
+            <span class="number">1044</span>
+            <span class="followers">Followers</span>
+          </div>
+          <div class="evolution">
+            <img src="./images/icon-up.svg" alt="arrow up" /> 99 Today
+          </div>
         </div>
-        <div class="card">
-          <div class="pseudo">@realnathanf</div>
-          <div class="number">11k</div>
-          <div class="followers">Followers</div>
-          <div class="evolution"><span>(arrow)</span> 1099 Today</div>
+        <div class="cards big-cards">
+          <div class="color-line insta-color"></div>
+          <div class="pseudo">
+            <img src="./images/icon-instagram.svg" alt="instagram" />
+            @realnathanf
+          </div>
+          <div class="number_followers">
+            <span class="number">11k</span>
+            <span class="followers">Followers</span>
+          </div>
+          <div class="evolution">
+            <img src="./images/icon-up.svg" alt="arrow up" />
+            1099 Today
+          </div>
         </div>
-        <div class="card">
-          <div class="pseudo">Nathan F.</div>
-          <div class="number">8239</div>
-          <div class="followers">Subscribers</div>
-          <div class="evolution"><span>(arrow)</span> 144 Today</div>
+        <div class="cards big-cards">
+          <div class="color-line youtube-color"></div>
+          <div class="pseudo">
+            <img src="./images/icon-youtube.svg" alt="youtube" />
+            Nathan F.
+          </div>
+          <div class="number_followers">
+            <span class="number">8239</span>
+            <span class="followers">Subscribers</span>
+          </div>
+          <div class="evolution evolution-red">
+            <img src="./images/icon-down.svg" alt="arrow up" />
+            144 Today
+          </div>
         </div>
       </div>
 
       <div class="second-social-row">
-        <h2>Overview - Today</h2>
+        <header class="header">
+          <h2>Overview - Today</h2>
+        </header>
+
         <div class="grid-second-social-row">
-          <div class="small-card">
+          <div class="cards small-cards">
             <div class="first-column">
               <div class="title">Page Views</div>
               <div class="number">87</div>
             </div>
             <div class="second-column">
-              <div class="logo">(logo)</div>
-              <div class="evolution"><span>(arrow)</span> 3%</div>
+              <div class="logo">
+                <img src="./images/icon-facebook.svg" alt="facebook" />
+              </div>
+              <div class="evolution">
+                <img src="./images/icon-up.svg" alt="arrow up" />
+                3%
+              </div>
             </div>
           </div>
-          <div class="small-card">
+          <div class="cards small-cards">
             <div class="first-column">
               <div class="title">Likes</div>
               <div class="number">52</div>
             </div>
             <div class="second-column">
-              <div class="logo">(logo)</div>
-              <div class="evolution"><span>(arrow)</span> 2%</div>
+              <div class="logo">
+                <img src="./images/icon-facebook.svg" alt="facebook" />
+              </div>
+              <div class="evolution evolution-red">
+                <img src="./images/icon-down.svg" alt="arrow down" />
+                2%
+              </div>
             </div>
           </div>
-          <div class="small-card">
+          <div class="cards small-cards">
             <div class="first-column">
               <div class="title">Likes</div>
               <div class="number">5462</div>
             </div>
             <div class="second-column">
-              <div class="logo">(logo)</div>
-              <div class="evolution"><span>(arrow)</span> 2257%</div>
+              <div class="logo">
+                <img src="./images/icon-instagram.svg" alt="instagram" />
+              </div>
+              <div class="evolution">
+                <img src="./images/icon-up.svg" alt="arrow up" />
+                2257%
+              </div>
             </div>
           </div>
-          <div class="small-card">
+          <div class="cards small-cards">
             <div class="first-column">
               <div class="title">Profile Views</div>
               <div class="number">52k</div>
             </div>
             <div class="second-column">
-              <div class="logo">(logo)</div>
-              <div class="evolution"><span>(arrow)</span> 1375%</div>
+              <div class="logo">
+                <img src="./images/icon-instagram.svg" alt="instagram" />
+              </div>
+              <div class="evolution">
+                <img src="./images/icon-up.svg" alt="arrow up" />
+                1375%
+              </div>
             </div>
           </div>
-          <div class="small-card">
+          <div class="cards small-cards">
             <div class="first-column">
               <div class="title">Retweets</div>
               <div class="number">117</div>
             </div>
             <div class="second-column">
-              <div class="logo">(logo)</div>
-              <div class="evolution"><span>(arrow)</span> 303%</div>
+              <div class="logo">
+                <img src="./images/icon-twitter.svg" alt="twitter" />
+              </div>
+              <div class="evolution">
+                <img src="./images/icon-up.svg" alt="arrow up" />
+                303%
+              </div>
             </div>
           </div>
-          <div class="small-card">
+          <div class="cards small-cards">
             <div class="first-column">
               <div class="title">Likes</div>
               <div class="number">507</div>
             </div>
             <div class="second-column">
-              <div class="logo">(logo)</div>
-              <div class="evolution"><span>(arrow)</span> 553%</div>
+              <div class="logo">
+                <img src="./images/icon-twitter.svg" alt="twitter" />
+              </div>
+              <div class="evolution">
+                <img src="./images/icon-up.svg" alt="arrow up" />
+                553%
+              </div>
             </div>
           </div>
-          <div class="small-card">
+          <div class="cards small-cards">
             <div class="first-column">
               <div class="title">Likes</div>
               <div class="number">107</div>
             </div>
             <div class="second-column">
-              <div class="logo">(logo)</div>
-              <div class="evolution"><span>(arrow)</span> 19%</div>
+              <div class="logo">
+                <img src="./images/icon-youtube.svg" alt="youtube" />
+              </div>
+              <div class="evolution evolution-red">
+                <img src="./images/icon-down.svg" alt="arrow down" />
+                19%
+              </div>
             </div>
           </div>
-          <div class="small-card">
+          <div class="cards small-cards">
             <div class="first-column">
               <div class="title">Total Views</div>
               <div class="number">1407</div>
             </div>
             <div class="second-column">
-              <div class="logo">(logo)</div>
-              <div class="evolution"><span>(arrow)</span> 12%</div>
+              <div class="logo">
+                <img src="./images/icon-youtube.svg" alt="youtube" />
+              </div>
+              <div class="evolution evolution-red">
+                <img src="./images/icon-down.svg" alt="arrow down" />
+                12%
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        Challenge by&nbsp;
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noopener noreferrer"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Shay Reichert</a>.
+        >. Coded by&nbsp;
+        <a
+          href="https://shayreichert.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Shay Reichert</a
+        >.
       </div>
     </div>
+    <script type="text/javascript" src="./js/main.js"></script>
   </body>
 </html>
